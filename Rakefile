@@ -1,5 +1,7 @@
 require 'sequel'
 
+task :default => [:bootstrap]
+
 desc "Create the first user."
 task :bootstrap do
   print "Pick a username: "
