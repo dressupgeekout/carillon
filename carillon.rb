@@ -12,26 +12,22 @@ DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/carillon.sqlite3')
 # table must have a primary_key named :id, a text column named :slug, and a text 
 # column named :title. In order for the timestamps to work properly, you must
 # have a column named :timestamp, typed timestamp.
+DB.create_table?(:posts) do
+  primary_key :id
+  text        :slug
+  text        :title
+  text        :body
+end
+POSTS_TEXTAREAS = [:body]
+
 DB.create_table?(:reviews) do
   primary_key :id
   text        :slug
   text        :title
-  integer     :year
-  text        :country
-  text        :director
+  text        :rating
   text        :body
-  text        :poster_url
-  timestamp   :timestamp
 end
 REVIEWS_TEXTAREAS = [:body]
-
-DB.create_table?(:notes) do
-  primary_key :id
-  text        :slug
-  text        :title
-  text        :body
-end
-NOTES_TEXTAREAS = [:body]
 
 helpers do
 
