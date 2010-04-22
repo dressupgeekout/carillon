@@ -7,7 +7,7 @@
     <% next if column == :id %>
 
     <span class="label"><%= column %></span>
-    <% if @collection_name.equiv_textareas.include?(column) %>
+    <% if @collection_name.textareas.include?(column) %>
 <textarea name="<%= column %>" rows="20">
 <%= @record[column] %></textarea>
     <% else %>

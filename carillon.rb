@@ -57,7 +57,7 @@ helpers do
     # columns within that table that should require a textarea (instead of just
     # an input field).
     # TODO: There's gotta be a better way of doing this. I don't wanna use eval.
-    def equiv_textareas
+    def textareas
       eval "#{self.to_s.upcase}_TEXTAREAS"
     end
   end
