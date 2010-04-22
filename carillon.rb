@@ -4,6 +4,7 @@
 #
 
 require 'sinatra'
+require 'erb'
 require 'sequel'
 
 DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/carillon.sqlite3')
