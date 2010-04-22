@@ -9,7 +9,7 @@ require 'sequel'
 DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/carillon.sqlite3')
 
 # Change these for your own application. The only requirements are that each
-# table must have a primary_key named :id, a text column named :slug, and a text 
+# table must have a primary_key named :id, a text column named :slug, and a text
 # column named :title. In order for the timestamps to work properly, you must
 # have a column named :timestamp, typed timestamp.
 DB.create_table?(:posts) do
@@ -31,17 +31,18 @@ REVIEWS_TEXTAREAS = [:body]
 
 helpers do
 
-  # Assume the user not logged in. If that's true, then throw a 401.
+  # Assume the user is not logged in. If that's true, then throw a 401.
   def auth
     session[:logged_in] ||= false
     complain unless session[:logged_in]
   end
 
+  # Throw a 401.
   def complain
     halt 401, '<h1>401 NOT AUTHORIZED</h1>'
   end
 
-  # Just a wrapper around #erb, so that I don't have to speficy the layout every
+  # Just a wrapper around #erb, so that I don't have to specify the layout every
   # single time.
   def erb_admin(template)
     erb :"admin/#{template}", :layout => :'admin/layout'
@@ -66,7 +67,7 @@ helpers do
     class Dataset
 
       # Given a Dataset, construct a hash that would be suitable for
-      # Sequel::Dataset#update or #insert. This method provides some useful     
+      # Sequel::Dataset#update or #insert. This method provides some useful
       # defaults, too.
       def generic_values(params)
         @hash = {}
