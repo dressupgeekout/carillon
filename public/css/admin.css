@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: georgia;
+}
+
+a {
+  font-weight: bold;
+  color: #ff9900;
+}
+
+a:hover { color: #ffbb22; }
+
+h1, h2, h3 { color: #222; }
+
+form input { display: block; }
+form input.entry-field { width: 50%; }
+form .label { font-style: italic; }
+
+form textarea {
+  width: 50%;
+  display: block;
+}
+
+.small { font-size: small; }
+
+#header {
+  background-color: #ff9900;
+}
+
+#header #header-content {
+  padding: 1em 0em 1em 1em;
+}
+
+#header h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+#header a { color: #222; }
+
+#content {
+  width: 95%;
+  margin: auto;
+}

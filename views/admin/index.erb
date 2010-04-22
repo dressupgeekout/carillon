@@ -1,0 +1,30 @@
+<h2>Admin</h2>
+
+<% DB.tables.each do |collection| %>
+  <% next if collection == :users %>
+  <h3><%= collection %></h3>
+  <ul>
+    <% DB[collection].all.each do |record| %>
+      <li>
+        <a href="/admin/<%= collection %>/edit/<%= record[:id] %>">
+          <%= record[:title] %>
+        </a> 
+        <a class="small" href="/admin/<%= collection %>/delete/<%= record[:id] %>">
+          (delete)
+        </a>
+      </li>
+    <% end %>
+    <li><a href="/admin/<%= collection %>/new">Add to <%= collection %>...</a></li>
+  </ul>
+<% end %>
+
+<h3>users</h3>
+<ul>
+  <% DB[:users].all.each do |user| %>
+    <li>
+      <a href="/admin/users/edit/<%= user[:id] %>"><%= user[:username] %></a>
+      <a class="small" href="/admin/users/delete/<%= user[:id] %>">(delete)</a>
+    </li>
+  <% end %>
+  <li><a href="/admin/users/new">New user...</a></li>
+</ul>

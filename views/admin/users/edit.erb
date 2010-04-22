@@ -1,0 +1,19 @@
+<h2>Settings for <%= @user[:username] %></h2>
+
+<a href="/admin">go back/cancel</a>
+
+<form method="POST" action="/admin/users/edit/<%= @user[:id] %>">
+  <span class="label">username</span>
+  <input type="text" name="username" value="<%= @user[:username] %>">
+
+  <span class="label">old password</span>
+  <input type="password" name="old_password">
+
+  <span class="label">new password</span>
+  <input type="password" name="password_a">
+
+  <span class="label">verify new password</span>
+  <input type="password" name="password_b"> <p>
+
+  <input type="submit" value="Submit changes">
+</form>

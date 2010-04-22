@@ -1,0 +1,19 @@
+<h2>Editing "<%= @record[:title] %>"</h2>
+
+<a href="/admin">go back/cancel</a>
+
+<form method="POST" action="/admin/<%= @collection_name %>/edit/<%= @record[:id] %>">
+  <% @collection_columns.each do |column| %>
+    <% next if column == :id %>
+
+    <span class="label"><%= column %></span>
+    <% if @collection_name.equiv_textareas.include?(column) %>
+<textarea name="<%= column %>" rows="20">
+<%= @record[column] %></textarea>
+    <% else %>
+      <input type="text" class="entry-field" name="<%= column %>" value="<%= @record[column] %>">
+    <% end %>
+  <% end %> <p>
+
+  <input type="submit" value="Submit changes">
+</form>
