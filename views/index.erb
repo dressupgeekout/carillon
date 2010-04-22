@@ -1,0 +1,19 @@
+<h2>Home</h2>
+
+This is the home page. You can read my blog posts and my movie reviews.
+
+<h3>Blog posts</h3>
+
+<ul>
+<% @posts.each do |post| %>
+  <li><a href="/posts/<%= post[:slug] %>"><%= post[:title] %></a></li>
+<% end %>
+</ul>
+
+<h3>Movie reviews</h3>
+
+<ul>
+<% @reviews.each do |review| %>
+  <li><a href="/reviews/<%= review[:slug] %>"><%= review[:title] %></a></li>
+<% end %>
+</ul>

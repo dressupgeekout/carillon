@@ -1,0 +1,17 @@
+body {
+  width: 75%;
+  margin: auto;
+  font-family: verdana;
+}
+
+#header {
+  color: #990000;
+}
+
+#content {
+  color: #222;
+}
+
+#footer {
+  font-size: small;
+}
