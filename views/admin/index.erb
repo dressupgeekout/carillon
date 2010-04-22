@@ -8,9 +8,6 @@
       <li>
         <a href="/admin/<%= collection %>/edit/<%= record[:id] %>">
           <%= record[:title] %>
-        </a> 
-        <a class="small" href="/admin/<%= collection %>/delete/<%= record[:id] %>">
-          (delete)
         </a>
       </li>
     <% end %>
@@ -23,7 +20,6 @@
   <% DB[:users].all.each do |user| %>
     <li>
       <a href="/admin/users/edit/<%= user[:id] %>"><%= user[:username] %></a>
-      <a class="small" href="/admin/users/delete/<%= user[:id] %>">(delete)</a>
     </li>
   <% end %>
   <li><a href="/admin/users/new">New user...</a></li>

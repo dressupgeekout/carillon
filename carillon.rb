@@ -168,8 +168,7 @@ post '/admin/users/edit/:id' do
 end
 
 # Delete a user
-# TODO: implement this as DELETE
-get '/admin/users/delete/:id' do
+delete '/admin/users/delete/:id' do
   auth
   DB[:users].where(:id => params[:id].to_i).delete
   redirect '/admin'
@@ -209,8 +208,7 @@ post '/admin/:collection/edit/:id' do
 end
 
 # Delete a record in a collection
-# TODO: implement this as DELETE
-get '/admin/:collection/delete/:id' do
+delete '/admin/:collection/delete/:id' do
   auth
   DB[params[:collection].to_sym].where(:id => params[:id].to_i).delete
   redirect '/admin'

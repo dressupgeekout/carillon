@@ -1,5 +1,10 @@
 <h2>Settings for <%= @user[:username] %></h2>
 
+<form method="post" action="/admin/users/delete/<%= @user[:id] %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Remove <%= @user[:username] %>">
+</form> <p>
+
 <a href="/admin">go back/cancel</a>
 
 <form method="POST" action="/admin/users/edit/<%= @user[:id] %>">
