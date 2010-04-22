@@ -2,6 +2,47 @@
 # Carillon => Content management that makes sense
 #
 
-Please don't use this software! It's still very beta stuff.
+Unlike most other content management systems, Carillon actually cares about how
+the content in your web application is structured.
 
-Carillon is written by Chrisitan Koch and is released under the MIT License.
+Often, you'll find that your website's content is actually very specific and
+well-defined. For instance, consider a website which hosts movie reviews. What
+components make up a movie review? Well, each one has a title, the year of
+release, the body of the review, the number of stars, perhaps a few screenshots,
+etc. CMSs such as Radiant do not readily provide you with places to enter this
+very structured content. It is possible, but very difficult and error-prone.
+
+Carillon makes it really simple to organize your content -- and to keep it
+organized. Getting started is easy:
+
+  $ git clone git://github.com/christiank/carillon.git
+  $ cd carillon
+  $ rake bootstrap
+  $ ( ... enter some credentials ... )
+  $ ( ... edit db/schema.rb to your liking ... )
+
+From right there, you can deploy to Heroku if you wish.
+
+=====
+
+Carillon is written by Christian Koch and is released under the MIT License.
+
+Copyright (c) 2010 Christian Koch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
