@@ -51,13 +51,13 @@ helpers do
       # Sequel::Dataset#update or #insert. This method provides some useful
       # defaults, too.
       def generic_values(params)
-        @hash = {}
+        hash = {}
         self.columns.each do |column|
           value = params[column.to_s]
           value = Time.now if column == :timestamp and value.empty?
-          @hash.merge!(column => value)
+          hash.merge!(column => value)
         end
-        @hash
+        hash
       end
 
     end
