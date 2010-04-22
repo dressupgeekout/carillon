@@ -61,7 +61,7 @@ helpers do
       eval "#{self.to_s.upcase}_TEXTAREAS"
     end
   end
-  
+
   module Sequel
     class Dataset
 

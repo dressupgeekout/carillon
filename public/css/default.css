@@ -4,14 +4,6 @@ body {
   font-family: verdana;
 }
 
-#header {
-  color: #990000;
-}
-
-#content {
-  color: #222;
-}
-
-#footer {
-  font-size: small;
-}
+#header { color: #990000; }
+#content { color: #222; }
+#footer { font-size: small; }
