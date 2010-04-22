@@ -170,8 +170,12 @@ end
 # Delete a user
 delete '/admin/users/delete/:id' do
   auth
-  DB[:users].where(:id => params[:id].to_i).delete
-  redirect '/admin'
+  if DB[:users].all.length == 1
+    complain
+  else
+    DB[:users].where(:id => params[:id].to_i).delete
+    redirect '/admin'
+  end
 end
 
 ##########
