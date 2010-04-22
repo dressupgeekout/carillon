@@ -7,6 +7,8 @@ require 'sinatra'
 require 'erb'
 require 'sequel'
 
+load 'main.rb'
+
 DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://db/carillon.sqlite3')
 
 # Change these for your own application. The only requirements are that each
@@ -218,23 +220,4 @@ delete '/admin/:collection/delete/:id' do
   auth
   DB[params[:collection].to_sym].where(:id => params[:id].to_i).delete
   redirect '/admin'
-end
-
-##########
-
-# Front pages
-get '/' do
-  @posts = DB[:posts].all
-  @reviews = DB[:reviews].all
-  erb :index
-end
-
-get '/posts/:slug' do
-  @post = DB[:posts].where(:slug => params[:slug]).first
-  erb :post
-end
-
-get '/reviews/:slug' do
-  @review = DB[:reviews].where(:slug => params[:slug]).first
-  erb :review
 end
