@@ -29,7 +29,7 @@ task :bootstrap do
     end
     DB[:users].insert(
       :username => username,
-      :password => password
+      :password => password_a
     )
     puts "Successfully added #{username} to users."
   else
