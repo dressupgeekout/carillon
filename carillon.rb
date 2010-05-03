@@ -7,9 +7,6 @@ require 'sinatra'
 require 'erb'
 require 'sequel'
 
-load 'main.rb'
-load 'db/schema.rb'
-
 helpers do
 
   # Assume the user is not logged in. If that's true, then throw a 401.
@@ -199,3 +196,9 @@ delete '/admin/:collection/delete/:id' do
   DB[params[:collection].to_sym].where(:id => params[:id].to_i).delete
   redirect '/admin'
 end
+
+##########
+
+# User-defined front pages
+load 'main.rb'
+load 'db/schema.rb'
