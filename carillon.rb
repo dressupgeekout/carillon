@@ -1,6 +1,6 @@
 #
 # Carillon CMS
-# Christian Koch <ckoch002@student.ucr.edu>
+# Christian Koch <cfkoch@sdf.lonestar.org>
 #
 
 require 'sinatra'
